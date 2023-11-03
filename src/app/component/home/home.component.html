@@ -1,0 +1,82 @@
+
+<mat-toolbar style="background-color: rgb(137, 23, 158);">
+    <span>Share IT </span>
+    <span class="example-spacer"></span>
+  
+  
+    <button mat-raised-button (click)="openAddEditEmpForm()">
+      Add Checkpoint
+    </button>
+    <button type="submit" class="btn btn-info text-center " (click)="logout()">Logout</button>
+  </mat-toolbar>
+  
+  
+  
+  <div class="main-body">
+  
+  
+  <mat-form-field style="width: 100%;">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+  
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="CHECKPOINT">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> CHECKPOINT </th>
+        <td mat-cell *matCellDef="let row"> {{row.CHECKPOINT}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Contact">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+        <td mat-cell *matCellDef="let row"> {{row.Contact}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.Date | date}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Mates">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mates </th>
+        <td mat-cell *matCellDef="let row"> {{row.Mates}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+        <td mat-cell *matCellDef="let row"> {{row.Time}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="CHECKMATE">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> CHECKMATE </th>
+        <td mat-cell *matCellDef="let row"> 
+         
+          <button mat-icon-button (click)="deleteEmployee(row.id) " style="color: green;">
+            <mat-icon>check_circle</mat-icon>
+          </button> 
+  
+        </td>
+      </ng-container>
+  
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+  </div>
+  

@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Share-it": [
+    {
+      "CHECKPOINT": "ปารีส",
+      "Mates": 3,
+      "Time": "12:00",
+      "Date": "2023-10-11T17:00:00.000Z",
+      "Contact": "mimiii",
+      "id": 3
+    },
+    {
+      "CHECKPOINT": "ไปไหนก็ได้โตแล้ว",
+      "Mates": 1,
+      "Time": "00:15",
+      "Date": "2023-10-19T17:00:00.000Z",
+      "Contact": "signal",
+      "id": 6
+    }
+  ]
+}

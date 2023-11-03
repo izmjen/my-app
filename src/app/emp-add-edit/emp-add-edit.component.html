@@ -1,0 +1,45 @@
+<div mat-dialog-title>
+    <h1>CHECKPOINT</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>CHECKPOINT</mat-label>
+            <input matInput type="text" formControlName="CHECKPOINT">
+          </mat-form-field>
+   
+        <mat-form-field appearance="outline">
+            <mat-label>Mates</mat-label>
+            <input matInput type="number"formControlName="Mates">
+          </mat-form-field>
+
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Time</mat-label>
+            <input matInput type="text"formControlName="Time">
+          </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="Date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Contact</mat-label>
+            <input matInput type="text"formControlName="Contact">
+          </mat-form-field>
+    </div>
+</div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button color="primary" type="submit">SAVE</button>
+    <button mat-raised-button type="button" [mat-dialog-close]="false">CANCEL</button>
+  </div>
+</form>
