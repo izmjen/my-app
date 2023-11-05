@@ -1,0 +1,16 @@
+.section {
+    display: flex;
+    min-height: 100vh; /* ความสูงเต็มหน้าจอ */
+    background: url('bg2.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.btn.btn-primary {
+    background-color: hsl(240, 39%, 44%);
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: #b953cd; /* เมื่อเมาส์ไปวางบนปุ่ม */
+}
